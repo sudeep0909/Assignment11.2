@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - Assignment 11.2</title>
+</head>
+<body>
+
+    <p>Click the button to add a new row and 2 colunms</p>
+
+    <table id="dynamicTable" border="1">
+
+    </table>
+
+    <br />
+
+    <input type="button" id="AddRow" value="Add Row" />
+
+    <script>
+
+        function addRow() {
+            // -- element holds Table element by its ID
+            var element = document.getElementById("dynamicTable");
+
+            // -- insertRow method will create and insert a new row to table of it's index
+            var row = element.insertRow(0);
+            // -- insertCell create TDs / Colomns in the Row
+            var col1 = row.insertCell(0);
+            var col2 = row.insertCell(1);
+
+            // -- createTextNode method create a text stored into node variable 
+            var node1 = document.createTextNode(`Cell 1`);
+            col1.appendChild(node1);
+            var node2 = document.createTextNode(`Cell 2`);
+            col2.appendChild(node2);
+            
+            // -- sets some style property to table
+            table.style.textAlign = "center";
+            table.style.cellpadding ="5px";
+        }
+
+        // -- a function call and create Listener  for Click event
+        var rowAdd = document.getElementById("AddRow");
+        rowAdd.addEventListener('click', addRow);
+    
+    </script>
+    
+    <!-- <script src="dom1.js" type="js" ></script> -->
+</body>
+</html>
